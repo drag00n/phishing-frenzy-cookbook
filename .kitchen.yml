@@ -11,10 +11,10 @@ provisioner:
   name: chef_solo
 
 platforms:
-  - name: debian-7.5
+  - name: debian-7.4
 
 suites:
   - name: default
     run_list:
-      -recipe[phishing-frenzy::default]
+      - recipe[phishing-frenzy::default]
     attributes:
