@@ -1,3 +1,8 @@
+<IfModule mod_passenger.c>
+    PassengerRoot %ROOT
+    PassengerRuby %RUBY
+</IfModule>
+
 <VirtualHost *:80>
     ServerName <%= node['servername'] %>
     # !!! Be sure to point DocumentRoot to 'public'!

@@ -1,14 +1,14 @@
 node.default['apache']['default_site_enabled'] = false
 
 include_recipe "apache2"
-include_recipe "apache2::mod_php5"
+include_recipe "rbenv::default"
+include_recipe "rbenv::ruby_build"
 
-package "php-mysql" do
-  action :install
-  notifies :restart, "service[apache2]"
-end
+rbenv_ruby "2.1.2"
 
-template "#{node['apache']['dir']}/sites-enable/pf.conf" do
+include_recipe "passenger_apache2::default"
+
+template "#{node['apache']['dir']}/sites-enabled/pf.conf" do
   source "apache2.conf.erb"
   notifies :restart, 'service[apache2]'
 end
