@@ -4,7 +4,6 @@ metadata
 
 cookbook "apache"
 cookbook "mysql"
-cookbook "passenger"
 cookbook "php"
+cookbook "rvm"
 cookbook "redis"
-cookbook "ruby"
